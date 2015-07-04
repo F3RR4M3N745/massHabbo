@@ -1,4 +1,4 @@
-﻿    
+    
     <!-- HTML relacionado aos campos do Captcha que foram removidos. -->
     <script src="https://www.google.com/recaptcha/api/js/recaptcha_ajax.js"></script>
     <span style="display: none;" id="recaptcha_challenge_field_holder">
@@ -17,6 +17,9 @@
                 <br />
                 <script>
 
+                // Declarar counter.
+                var counter = 0;
+
                 // Gerar e-mail random.
                 function random_email()
                 {
@@ -32,13 +35,22 @@
                 // Enviar requests para registrar a conta.
                 function changecaptcha() {
 
-                    var captcha_response = $('#userNameField').val();
-                    var captcha_key = $('#recaptcha_challenge_field').val(); 
-                document.getElementById('captcha').src = "https://www.google.com/recaptcha/api/image?c=" + captcha_key;
+                    if (counter == 0) {
 
+                        // Atualizar captcha e setar counter para próxima etapa.
+                        RecaptchaUtil.reloadRecaptcha();
+                        counter = 1;
 
-                    if (captcha_response != "skip") {
+                    } else if (counter == 1) {
 
+                        // Pegar a key e criar a imagem correspondente.
+                        var captcha_response = $('#userNameField').val();
+                        document.getElementById('captcha').src = "https://www.google.com/recaptcha/api/image?c=" + captcha_key;
+                        counter = 3;
+
+                    } else {
+
+                        // Enviar request para criar a conta.
                        $.post("https://www.habbo.com.br/registration/submit",
                         {
                             "next" : "",
@@ -57,10 +69,11 @@
                             console.log(data);
                         });
 
-                    }
+                       counter = 0;
 
-                    RecaptchaUtil.reloadRecaptcha();
+                    }
                 }
+
                 </script>
                 <div><input type="button" onclick="changecaptcha();" name="submit" id="loginButton" value="" /></div>
             </div>
