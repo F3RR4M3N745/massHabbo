@@ -52,6 +52,7 @@
 
                         // Enviar request para criar a conta.
                         var captcha_response = $('#userNameField').val();
+                        var captcha_key = $('#recaptcha_challenge_field').val();
 
                         if (captcha_response == "") {
                             counter = 0;
