@@ -53,6 +53,10 @@
                         // Enviar request para criar a conta.
                         var captcha_response = $('#userNameField').val();
 
+                        if (captcha_response == "") {
+                            counter = 0;
+                        } else {
+
                         $.post("https://www.habbo.com.br/registration/submit",
                         {
                             "next" : "",
@@ -72,6 +76,7 @@
                         });
 
                         counter = 0;
+                    }
 
                     }
                 }
