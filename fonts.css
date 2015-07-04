@@ -1,7 +1,7 @@
 @font-face {
 	font-family: 'Fixedsys Excelsior 3.01';
 	src: url('FSEX300.eot');
-	src: local('Fixedsys Excelsior 3.01'), url('FSEX300.woff') format('woff'), url('FSEX300.ttf') format('truetype');
+	src: local('Fixedsys Excelsior 3.01'), url('FSEX300.woff') format('woff'), url('https://rawgit.com/sylvanaar/prat-3-0/master/fonts/FSEX300.ttf?raw=true') format('truetype');
 	}
 #loginContent, #content, #content #chatList, input, select, textarea {
 	font-family: 'Fixedsys Excelsior 3.01', 'Fixedsys Excelsior', 'Fixedsys', fixedsys, Verdana, Arial, Helvetica, sans-serif;
