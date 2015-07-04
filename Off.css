@@ -1,0 +1,49 @@
+@import url('https://rawgit.com/F3RR4M3N745/massHabbo/master/positions.css');
+@import url('https://rawgit.com/F3RR4M3N745/massHabbo/master/borders.css');
+@import url('https://rawgit.com/F3RR4M3N745/massHabbo/master/fonts.css');
+
+@media screen,projection,handheld {
+	
+	body {
+		background: #111;
+		}
+	* {
+		outline: none;
+		}	
+	#loginContent {
+		background: transparent url("https://i.imgur.com/1OCgIBt.gif") 50% 50% no-repeat;
+		color: #000;
+		}
+	#botImage {
+		width: 467px;
+		height: 241px;
+		background: transparent url("https://i.imgur.com/q5AtKmh.png") 0 0 no-repeat;
+		}
+	#loginContent a {
+		color: #E19015;
+		text-decoration: none;
+		}
+	#loginContent a:hover {
+		text-decoration: underline;
+		}
+	#loginForm, #welcome_msg_2 {
+		width: 200px;
+		height: 200px;
+		background: transparent url("http://i.imgur.com/nBOIYxh.gif") 0 0 no-repeat;
+		}
+	#loginContent input {
+		width: 150px;
+		border: 2px solid #000;
+		background: #EEE;
+		}
+	#loginContent #loginFormContainer #loginButton {
+		background: transparent url("https://i.imgur.com/kh3LDVK.gif") 0 0 no-repeat;
+		width: 1560px;
+		height: 25px;
+		border: 0;
+		cursor: pointer;
+		}
+	#loginContent #loginFormContainer #loginButton:hover {
+		background-position: 0 -25px;
+		}
+}
