@@ -9,15 +9,20 @@
     <!-- HTML relacionado ao layout do massHabbo. -->
     <div id="botImage"></div>
     <div id="loginContent">
-        <form id="loginForm" action="./" method="post" enctype="application/x-www-form-urlencoded">
+        <form id="loginForm">
             <div id="loginFormContainer">
                 <img id="captcha" height="57" width="170" src="void">
-                <input type="hidden" name="login" id="loginField" value="login"/>
-                <input type="hidden" name="redirect" id="redirectField" value=""/>
                 <div><label for="userNameField">Captcha:</label><br />
                 <input type="text" name="userName" id="userNameField" maxlength="16"/></div>
                 <br />
-                <div><input type="submit" name="submit" id="loginButton" value="" /></div>
+                <script>
+                function changecaptcha() {
+                RecaptchaUtil.reloadRecaptcha();
+                var captcha_key = $('#recaptcha_challenge_field').val(); 
+                document.getElementById('captcha').src = "https://www.google.com/recaptcha/api/image?c=" + captcha_key;
+                }
+                </script>
+                <div><input type="button" onclick="changecaptcha();" name="submit" id="loginButton" value="" /></div>
             </div>
         </form>
     </div>
