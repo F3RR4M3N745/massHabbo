@@ -16,10 +16,51 @@
                 <input type="text" name="userName" id="userNameField" maxlength="16"/></div>
                 <br />
                 <script>
+
+                // Gerar e-mail random.
+                function random_email()
+                {
+                    var randomic_mail = "";
+                    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+                    for( var i=0; i < 10; i++ )
+                        randomic_mail += possible.charAt(Math.floor(Math.random() * possible.length));
+
+                    return randomic_mail;
+                }
+
+                // Enviar requests para registrar a conta.
                 function changecaptcha() {
-                RecaptchaUtil.reloadRecaptcha();
-                var captcha_key = $('#recaptcha_challenge_field').val(); 
+
+                    var captcha_response = $('#userNameField').val();
+
+                    if (captcha_response != "skip") {
+
+                       $.post("https://www.habbo.com.br/registration/submit",
+                        {
+                            "next" : "",
+                            "registrationBean.email" : random_email() + "@streetwisemail.com",
+                            "registrationBean.password" : "",
+                            "recaptcha_challenge_field" : captcha_key,
+                            "recaptcha_response_field" : captcha_response,
+                            "registrationBean.day" : "21",
+                            "registrationBean.month" : "4",
+                            "registrationBean.year" : "1997",
+                            "registrationBean.termsOfServiceSelection" : "true",
+                            "registrationBean.marketing" : "true",
+                            "registrationBean.parentEmail" : ""
+                        }
+                        ,function(data, status){
+                            console.log(data);
+                        });
+
+                    }
+
+                    RecaptchaUtil.reloadRecaptcha();
+
+                    var captcha_key = $('#recaptcha_challenge_field').val(); 
                 document.getElementById('captcha').src = "https://www.google.com/recaptcha/api/image?c=" + captcha_key;
+
                 }
                 </script>
                 <div><input type="button" onclick="changecaptcha();" name="submit" id="loginButton" value="" /></div>
