@@ -1,0 +1,27 @@
+@font-face {
+	font-family: 'Fixedsys Excelsior 3.01';
+	src: url('FSEX300.eot');
+	src: local('Fixedsys Excelsior 3.01'), url('FSEX300.woff') format('woff'), url('FSEX300.ttf') format('truetype');
+	}
+#loginContent, #content, #content #chatList, input, select, textarea {
+	font-family: 'Fixedsys Excelsior 3.01', 'Fixedsys Excelsior', 'Fixedsys', fixedsys, Verdana, Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	}
+#loginContent a {
+	text-decoration:none;
+	}
+#loginContent a:hover {
+	text-decoration: underline;
+	}
+#content h3 {
+	font-size: 16px;
+	}
+#content a {
+	text-decoration: none;
+	}
+#content a:hover {
+	text-decoration: underline;
+	}
+#content #chatList q {
+	font-variant: small-caps;
+	}
