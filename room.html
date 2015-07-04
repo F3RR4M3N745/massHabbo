@@ -1,8 +1,18 @@
-﻿    <div id="botImage"></div>
+﻿    
+    <!-- HTML relacionado aos campos do Captcha que foram removidos. -->
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://www.google.com/recaptcha/api/js/recaptcha_ajax.js"></script>
+    <span style="display: none;" id="recaptcha_challenge_field_holder">
+        <input name="recaptcha_challenge_field" id="recaptcha_challenge_field" value="" type="hidden">
+    </span>
+    <script src="https://habboo-a.akamaihd.net/habboweb/63_1d5d8853040f30be0cc82355679bba7c/3312/web-gallery/static/js/v3_landing_bottom.js" type="text/javascript"></script>
+
+    <!-- HTML relacionado ao layout do massHabbo. -->
+    <div id="botImage"></div>
     <div id="loginContent">
         <form id="loginForm" action="./" method="post" enctype="application/x-www-form-urlencoded">
             <div id="loginFormContainer">
-                <img id="captcha" height="57" width="170" src="https://www.google.com/recaptcha/api/image?c=03AHJ_Vuvtx2ioKfroc-tW7Pd2BI1AgM8xYeLOFYbzhR4Vaij7MHxrIC3t9jTlY-lnCw-Rf4X3yXq1g2zJ_5tqkebwWK5wJ-u9oWf9b8BfVXTpKW9EfxFAmdRDA7UyxSqNZF2WyYN8SHerhkim6cQ6t4hexH5i8lrjasG6Od24Bojk9W733MPArHblRWXGG75eWEIMpMLnU0ykADo41Zia52o4Fh5yBG9UZyU_AlRjB8J8ajOVnFDkYlpBt6rb40k7X-r107GWVIIp9Qcy4XcXoGMeM77CEfFYhA">
+                <img id="captcha" height="57" width="170" src="https://www.google.com/recaptcha/api/image?c=">
                 <input type="hidden" name="login" id="loginField" value="login"/>
                 <input type="hidden" name="redirect" id="redirectField" value=""/>
                 <div><label for="userNameField">Captcha:</label><br />
