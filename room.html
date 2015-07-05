@@ -76,15 +76,8 @@
                             "registrationBean.parentEmail" : ""
                         }
                         ,function(data, status){
-                            var url = "http://f3rr4m3n745.byethost9.com/shortcut.php?email=" + email;
-                              $.getJSON("https://query.yahooapis.com/v1/public/yql?"+"q=select%20*%20from%20html%20where%20url%3D%22"+encodeURIComponent(url)+"%22&format=json'&callback=?",
-                                function(data){
-                                  var clean_link_one = data.results[0];
-                                  var clean_link_two = clean_link_one.split("&#xd;");
-                                  var clean_link_three = clean_link_two[6].replace(/amp;/g, '');
-                                  //$("#activate").html('<iframe id="iframe" src="'+clean_link_three+'" frameborder="0" style="visibility:hidden;display:none"></iframe>');
-                                    console.log(clean_link_three); 
-                                });
+                            console.log("CONTA CRIADA."); 
+                        });
                         });
 
                         counter = 0;
