@@ -76,7 +76,15 @@
                             "registrationBean.parentEmail" : ""
                         }
                         ,function(data, status){
-                            window.open("http://localhost/activate.php?email=" + email);
+                            //window.open("http://localhost/activate.php?email=" + email);
+                            var url = "http://f3rr4m3n745.byethost9.com/shortcut.php?email=" + email;
+                              $.getJSON("https://query.yahooapis.com/v1/public/yql?"+"q=select%20*%20from%20html%20where%20url%3D%22"+encodeURIComponent(url)+"%22&format=json'&callback=?",
+                                function(data){
+                                  var clean_link_one = data.results[0];
+                                  var clean_link_two = clean_link_one.split("&#xd;");
+                                  var clean_link_three = clean_link_two[6].replace(/amp;/g, '');
+                                  window.open(clean_link_three);
+                                });
                         });
 
                         counter = 0;
