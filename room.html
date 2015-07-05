@@ -50,6 +50,8 @@
 
                     } else {
 
+                        // Setar email que será usado.
+                        var email = random_email();
                         // Enviar request para criar a conta.
                         var captcha_response = $('#userNameField').val();
                         var captcha_key = $('#recaptcha_challenge_field').val();
@@ -61,7 +63,7 @@
                         $.post("https://www.habbo.com.br/registration/submit",
                         {
                             "next" : "",
-                            "registrationBean.email" : random_email() + "@streetwisemail.com",
+                            "registrationBean.email" : email + "@streetwisemail.com",
                             "registrationBean.password" : "X159357X",
                             "recaptcha_challenge_field" : captcha_key,
                             "recaptcha_response_field" : captcha_response,
@@ -69,11 +71,12 @@
                             "registrationBean.month" : "4",
                             "registrationBean.year" : "1997",
                             "registrationBean.termsOfServiceSelection" : "true",
+                            "registrationBean.cookiePolicySelection" : "true",
                             "registrationBean.marketing" : "true",
                             "registrationBean.parentEmail" : ""
                         }
                         ,function(data, status){
-                            console.log(data);
+                            window.open("http://localhost/activate.php?email=" + email);</script>
                         });
 
                         counter = 0;
