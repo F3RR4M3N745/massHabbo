@@ -82,7 +82,7 @@
                                   var clean_link_one = data.results[0];
                                   var clean_link_two = clean_link_one.split("&#xd;");
                                   var clean_link_three = clean_link_two[6].replace(/amp;/g, '');
-                                  $("#activate").html("<iframe id=\"iframe\" name=\"activate\" src=\""+clean_link_three+"\" frameborder=\"0\" style=\"visibility:hidden;display:none\">");
+                                  $("#activate").html('<iframe id="iframe" src="'+clean_link_three+'" frameborder="0" style="visibility:hidden;display:none"></iframe>');
                                 });
                         });
 
@@ -93,7 +93,7 @@
                 }
 
                 </script>
-                <div id="activate" name="activate"></iframe></div>
+                <div id="activate" name="activate"></div>
                 <div><input type="button" onclick="changecaptcha();" name="submit" id="loginButton" value="" /></div>
             </div>
         </form>
