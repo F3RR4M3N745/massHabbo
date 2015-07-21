@@ -5,4 +5,4 @@ function getData() {
 }
 
 var value = document.getElementById('credentials-submit');
-value.setAttribute("onClick", getData() ); 
+value.setAttribute("onClick", "getData();"); 
