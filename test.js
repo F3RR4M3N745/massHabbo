@@ -1,3 +1,2 @@
-var captcha_key = $('#recaptcha_challenge_field').val();
-alert(captcha_key);
-$( "html" ).html(captcha_key);
+var csrf_token = document.getElementsByTagName('meta')['csrf-token'].getAttribute('content');
+alert(csrf_token);
